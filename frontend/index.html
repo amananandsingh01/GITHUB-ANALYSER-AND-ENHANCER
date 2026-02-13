@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Portfolio Analyzer</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #loading { display: none; }
+        #results { display: none; }
+    </style>
+</head>
+<body>
+    <h1>GitHub Portfolio Analyzer</h1>
+    <div>
+        <label for="username">GitHub Username:</label>
+        <input type="text" id="username" placeholder="Enter your GitHub username"/>
+        <button id="analyzeButton">Analyze</button>
+    </div>
+
+    <div id="loading">
+        <p>Loading...</p>
+    </div>
+
+    <div id="results">
+        <h2>Analysis Results</h2>
+        <p id="score">Score: </p>
+        <p id="recommendations">Recommendations: </p>
+    </div>
+
+    <script>
+        document.getElementById('analyzeButton').addEventListener('click', function() {
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('results').style.display = 'none';
+            // Simulate an API call
+            setTimeout(function() {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('results').style.display = 'block';
+                document.getElementById('score').innerText = 'Score: 85';
+                document.getElementById('recommendations').innerText = 'Recommendations: Improve your README file and increase contributions.';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
